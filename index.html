@@ -3,15 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>thedev.ovh - Free Domain Name Service</title>
+  <title>thedev.ovh - Free Domain Name Service (Winter)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    @font-face {
-      font-family: 'AvenirLTStd-Medium';
-      src: url('https://raw.githubusercontent.com/thedev-ovh/thedev.ovh/main/AvenirLTStd-Medium.otf') format('opentype');
-      font-weight: normal;
-      font-style: normal;
-    }
-
+    /* Common Styles */
     * {
       margin: 0;
       padding: 0;
@@ -19,9 +14,9 @@
     }
 
     body {
-      font-family: 'AvenirLTStd-Medium', sans-serif;
-      background-color: #2c3e50;
-      color: white;
+      font-family: 'Poppins', sans-serif;
+      background-color: #3498db;
+      color: #ecf0f1;
       text-align: center;
       padding: 50px 20px;
       display: flex;
@@ -29,103 +24,63 @@
       align-items: center;
       min-height: 100vh;
       flex-direction: column;
-      opacity: 0;
       overflow: hidden;
-      animation: fadeIn 1s forwards;
-      position: relative;
+    }
+
+    h1, h2, h3, .intro-text, .divider, .founders {
+      animation: fadeIn 1s ease-in-out forwards;
+      opacity: 0;
     }
 
     h1 {
       font-size: 2.8rem;
       margin-bottom: 15px;
-      opacity: 0;
-      animation: fadeIn 1s forwards 0.5s;
+      animation-delay: 0.5s;
     }
 
     h2 {
       font-size: 1.5rem;
       margin-bottom: 15px;
-      opacity: 0;
-      animation: fadeIn 1s forwards 1s;
+      animation-delay: 1s;
     }
 
     h3 {
       font-size: 1.2rem;
       margin: 25px 0;
-      opacity: 0;
-      animation: fadeIn 1s forwards 1.5s;
-    }
-
-    .highlight {
-      color: #3498db;
+      animation-delay: 1.5s;
     }
 
     .divider {
       width: 60%;
-      margin: 20px auto;
       height: 2px;
-      background-color: #ecf0f1;
-      border-radius: 5px;
-      opacity: 0;
-      animation: fadeIn 1s forwards 2s;
+      background-color: #1abc9c;
+      margin: 20px auto;
+      animation-delay: 2s;
     }
 
     .intro-text {
       font-size: 1.1rem;
-      margin: 20px 0;
       color: #ecf0f1;
-      max-width: 800px;
       line-height: 1.6;
-      opacity: 0;
-      animation: fadeIn 1s forwards 2s;
+      max-width: 800px;
+      margin: 20px auto;
+      animation-delay: 2.5s;
     }
 
     .founders {
       font-size: 1rem;
       margin-top: 30px;
-      opacity: 0;
-      animation: fadeIn 1s forwards 2.5s;
+      animation-delay: 3s;
     }
 
     .founders a {
-      color: #2ecc71;
+      color: #1abc9c;
       text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-      position: relative;
-      display: inline-block;
-      transition: color 0.3s ease;
+      margin: 0 10px;
+      font-weight: 600;
     }
 
     .founders a:hover {
-      color: #27ae60;
-    }
-
-    .founders a::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: 2px;
-      background-color: #27ae60;
-      transform: scaleX(0);
-      transform-origin: bottom right;
-      transition: transform 0.3s ease;
-    }
-
-    .founders a:hover::after {
-      transform: scaleX(1);
-      transform-origin: bottom left;
-    }
-
-    h3 a {
-      color: #3498db;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    h3 a:hover {
       text-decoration: underline;
     }
 
@@ -137,6 +92,15 @@
         opacity: 1;
       }
     }
+
+    /* Snowfall Effect */
+    #snowCanvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: -1;
+    }
   </style>
 </head>
 <body>
@@ -144,18 +108,51 @@
   <h2>A free domain name service for everyone<br><span class="highlight">{name}.thedev.ovh</span></h2>
   <div class="divider"></div>
   <div class="intro-text">
-    <p>Welcome to thedev.ovh! We provide free subdomains for developers, students, and anyone with a great idea. Get your own subdomain and make your projects stand out on the web!</p>
+    <p>This winter, thedev.ovh is committed to providing free domain names for students, individuals with school projects, and personal initiatives. Our goal is to give developers the opportunity to run their websites on subdomains that resonate with their projects, without the worry of domain length. As the winter chill sets in, let thedev.ovh provide warmth and support for your projects!</p>
   </div>
-  <h3>
-    Go to the <a href="https://panel.thedev.ovh" target="_blank">panel page</a> to register an account.
-    <br>
-    Visit our <a href="https://discord.gg/R2feDM9NF3" target="_blank">Discord</a>, create a ticket, and enter your desired domain.
-  </h3>
+  <h3>Visit our <a href="https://panel.thedev.ovh" class="link" target="_blank">Panel</a> or join our <a href="https://discord.gg/R2feDM9NF3" class="link" target="_blank">Discord</a> for support!</h3>
   <div class="founders">
-    <p><strong>Founders:</strong></p>
-    <a href="https://github.com/willi-felix" target="_blank">willi-felix</a> |
-    <a href="https://github.com/328000" target="_blank">328000</a> |
-    <a href="https://github.com/hgguuujjjiiijjb" target="_blank">aw_neverdie</a>
+    <p><strong>Founders:</strong> <a href="https://github.com/willi-felix" target="_blank">willi-felix</a>, <a href="https://github.com/328000" target="_blank">328000</a>, <a href="https://github.com/hgguuujjjiiijjb" target="_blank">aw_neverdie</a></p>
   </div>
+
+  <!-- Snowfall Effect -->
+  <canvas id="snowCanvas"></canvas>
+  <script>
+    const canvas = document.getElementById("snowCanvas");
+    const ctx = canvas.getContext("2d");
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const snowflakes = Array.from({ length: 200 }).map(() => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      speed: Math.random() * 1.5 + 0.5,
+      size: Math.random() * 3 + 1,
+      opacity: Math.random() * 0.5 + 0.3,
+    }));
+
+    function drawSnow() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      snowflakes.forEach(snowflake => {
+        ctx.beginPath();
+        ctx.arc(snowflake.x, snowflake.y, snowflake.size, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 255, 255, ${snowflake.opacity})`;
+        ctx.fill();
+        snowflake.y += snowflake.speed;
+        if (snowflake.y > canvas.height) snowflake.y = -snowflake.size;
+      });
+
+      requestAnimationFrame(drawSnow);
+    }
+
+    window.addEventListener("resize", () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+
+    drawSnow();
+  </script>
 </body>
 </html>

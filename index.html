@@ -101,6 +101,82 @@
       pointer-events: none;
       z-index: -1;
     }
+
+    /* Styling for mobile and smaller devices */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      h2 {
+        font-size: 1.3rem;
+      }
+
+      h3 {
+        font-size: 1rem;
+      }
+
+      .intro-text {
+        font-size: 1rem;
+        padding: 0 15px;  /* Added some padding for better readability */
+      }
+
+      .divider {
+        width: 80%;
+      }
+
+      .founders {
+        font-size: 0.9rem;
+        padding: 0 15px;
+      }
+
+      body {
+        padding: 20px;
+      }
+    }
+
+    /* Styling for very small screens (phones under 400px) */
+    @media (max-width: 400px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      h2 {
+        font-size: 1.1rem;
+      }
+
+      h3 {
+        font-size: 0.9rem;
+      }
+
+      .intro-text {
+        font-size: 0.9rem;
+        padding: 0 10px;
+      }
+
+      .divider {
+        width: 90%;
+      }
+
+      .founders {
+        font-size: 0.8rem;
+        padding: 0 10px;
+      }
+
+      body {
+        padding: 10px;
+      }
+    }
+
+    /* White Bar at the bottom */
+    .bottom-bar {
+      width: 100%;
+      height: 20px;
+      background-color: white;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
   </style>
 </head>
 <body>
@@ -110,13 +186,14 @@
   <div class="intro-text">
     <p>This winter, thedev.ovh is committed to providing free domain names for students, individuals with school projects, and personal initiatives. Our goal is to give developers the opportunity to run their websites on subdomains that resonate with their projects, without the worry of domain length. As the winter chill sets in, let thedev.ovh provide warmth and support for your projects!</p>
   </div>
-  <h3>Visit our <a href="https://panel.thedev.ovh" class="link" target="_blank">Panel</a> and join our  href="https://discord.gg/R2feDM9NF3" class="link" target="_blank">Discord</a> for support!</h3>
+  <h3>Visit our <a href="https://panel.thedev.ovh" class="link" target="_blank">Panel</a> and join our <a href="https://discord.gg/R2feDM9NF3" class="link" target="_blank">Discord</a> for support!</h3>
   <div class="founders">
     <p><strong>Founders:</strong> <a href="https://github.com/willi-felix" target="_blank">willi-felix</a>, <a href="https://github.com/328000" target="_blank">328000</a>, <a href="https://github.com/hgguuujjjiiijjb" target="_blank">aw_neverdie</a></p>
   </div>
 
   <!-- Snowfall Effect -->
   <canvas id="snowCanvas"></canvas>
+
   <script>
     const canvas = document.getElementById("snowCanvas");
     const ctx = canvas.getContext("2d");
@@ -154,5 +231,8 @@
 
     drawSnow();
   </script>
+
+  <!-- White Bar -->
+  <div class="bottom-bar"></div>
 </body>
 </html>

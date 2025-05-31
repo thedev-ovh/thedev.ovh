@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Free Domains</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <style>
       * {
@@ -11,59 +12,82 @@
         padding: 0;
         box-sizing: border-box;
       }
+
       body {
-        font-family: 'Inter', sans-serif;
-        background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
-        color: #fff;
+        font-family: 'Outfit', sans-serif;
+        background: radial-gradient(ellipse at top, #0e0e0e, #050505);
+        color: white;
         height: 100vh;
         display: flex;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
         overflow: hidden;
       }
+
       .card {
-        background: rgba(255, 255, 255, 0.05);
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
         padding: 3rem 4rem;
-        border-radius: 1.5rem;
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
-        backdrop-filter: blur(10px);
         text-align: center;
-        max-width: 400px;
+        backdrop-filter: blur(20px);
+        box-shadow: 0 20px 80px rgba(0, 0, 0, 0.6);
+        max-width: 500px;
+        width: 90%;
+        transform-style: preserve-3d;
       }
+
       h1 {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
+        font-weight: 600;
+        background: linear-gradient(90deg, #00ffe7, #6a00ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
         margin-bottom: 1rem;
       }
+
       a {
         display: inline-block;
-        margin-top: 1rem;
-        color: #00d9ff;
-        text-decoration: none;
-        font-size: 1.1rem;
-        font-weight: bold;
-        border: 2px solid #00d9ff;
-        padding: 0.5rem 1.2rem;
+        margin-top: 1.5rem;
+        padding: 0.75rem 1.75rem;
         border-radius: 999px;
-        transition: all 0.3s;
+        background: linear-gradient(90deg, #00ffe7, #6a00ff);
+        color: black;
+        font-weight: 600;
+        text-decoration: none;
+        transition: transform 0.2s ease;
       }
+
       a:hover {
-        background: #00d9ff;
-        color: #000;
+        transform: scale(1.05);
+      }
+
+      .glow {
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(circle, #00ffe799, transparent 70%);
+        filter: blur(100px);
+        z-index: -1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
       }
     </style>
   </head>
   <body>
+    <div class="glow"></div>
     <div class="card" id="card">
-      <h1>Get Your Free Domain</h1>
-      <a href="https://nic.is-app.top/" target="_blank">Visit nic.is-app.top</a>
+      <h1>Claim a Free Domain</h1>
+      <a href="https://nic.is-app.top/" target="_blank">nic.is-app.top</a>
     </div>
 
     <script>
       gsap.from("#card", {
-        y: -100,
         opacity: 0,
-        scale: 0.8,
-        duration: 1.2,
+        y: 60,
+        scale: 0.95,
+        duration: 1,
         ease: "power3.out"
       });
     </script>

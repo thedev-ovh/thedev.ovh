@@ -15,7 +15,7 @@
 
       body {
         font-family: 'Outfit', sans-serif;
-        background: radial-gradient(ellipse at top, #0e0e0e, #050505);
+        background: #0b0b0b;
         color: white;
         height: 100vh;
         display: flex;
@@ -25,52 +25,51 @@
       }
 
       .card {
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
         border-radius: 20px;
         padding: 3rem 4rem;
         text-align: center;
         backdrop-filter: blur(20px);
-        box-shadow: 0 20px 80px rgba(0, 0, 0, 0.6);
-        max-width: 500px;
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+        max-width: 480px;
         width: 90%;
         transform-style: preserve-3d;
       }
 
       h1 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
         font-weight: 600;
-        background: linear-gradient(90deg, #00ffe7, #6a00ff);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        margin-bottom: 1rem;
+        color: #f5f5f5;
+        margin-bottom: 1.5rem;
       }
 
       a {
         display: inline-block;
-        margin-top: 1.5rem;
+        margin-top: 1rem;
         padding: 0.75rem 1.75rem;
         border-radius: 999px;
-        background: linear-gradient(90deg, #00ffe7, #6a00ff);
-        color: black;
+        background: #ffffff;
+        color: #0b0b0b;
         font-weight: 600;
         text-decoration: none;
-        transition: transform 0.2s ease;
+        transition: transform 0.2s ease, background 0.3s ease;
       }
 
       a:hover {
-        transform: scale(1.05);
+        background: #d4d4d4;
+        transform: scale(1.04);
       }
 
       .glow {
         position: absolute;
-        width: 600px;
-        height: 600px;
-        background: radial-gradient(circle, #00ffe799, transparent 70%);
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(circle, #6a00ff33, transparent 70%);
         filter: blur(100px);
         z-index: -1;
-        top: 50%;
-        left: 50%;
+        top: 30%;
+        left: 60%;
         transform: translate(-50%, -50%);
       }
     </style>
@@ -79,16 +78,15 @@
     <div class="glow"></div>
     <div class="card" id="card">
       <h1>Claim a Free Domain</h1>
-      <a href="https://nic.is-app.top/" target="_blank">nic.is-app.top</a>
+      <a href="https://nic.is-app.top/" target="_blank">Visit nic.is-app.top</a>
     </div>
 
     <script>
       gsap.from("#card", {
         opacity: 0,
-        y: 60,
-        scale: 0.95,
+        y: 40,
         duration: 1,
-        ease: "power3.out"
+        ease: "power2.out"
       });
     </script>
   </body>
